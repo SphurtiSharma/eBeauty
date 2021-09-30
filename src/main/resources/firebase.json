@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ebeauty-csis4495",
+  "private_key_id": "a305e68e5ae91f429fc2f189bc0f1e5b271bb55f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/ldZEAxhlgM7L\nDTh74OXmcN23m6KmjFjt+7E/EisSBt3C88CJezRm6VPCj93+9ipNwjaLuHGwmfca\nn6IT6FZaX+9ye7KF2AmIuq4naxN+UfB1btP6EDnYkYo2Pc5z/f/2X3BK61109eWW\nNhehZ555x0sj9P0gMp/Wuk23zsGa0G26+shdIHeV3uOSK3QVnO+jJb95elitRLm/\nhJfasA21sHVwpk5zryLV/gKmVDp5rBZeKMiU1PoRbmYJSmXPB728boiTf/Yyigtc\nE9hrfVW50BImhAE2I/4L0WNYWHCyW5n2RTIcuIZDBK7MQ9H+qtZEWs2XOnPIO3v6\n+wDppZlpAgMBAAECggEAECesHOmO59Y7+crIWcfN0wfu5kHhLf6VLCImYM1hJOC/\n1+XSdTVWppvjtHsJqutqh0qKa2825P+iotPVqKyVhYLj78km9VrReP5W25uPlf4G\nUvywsrwmCJFDMI43J7hCGm4TS7n7lDZ88NToWrOgXR/1QdexdYLXUBW/InH0iN+H\nXHTJODex8pbpsxATc2W3V5sR1I/ZkZZWjQTQ/WfqVA4N60jE4WPzO3KwF/2UeKDA\nbiLPN+ySoA2IHScROekfhsUSGG5Mw5Ra2Y5MenfQnxk97/2dWygbrHPi/MD0wZ80\nK1EOVOuRBp5/3TSOwQDLqbedRkR2rQ6Bj31ljg5pIQKBgQD4d2gaf7IqR/KX6UyF\nuQpm+m1ux3rHQGEqIbEL4j1g66k1GqjScXIWJXUxMPcmKWeCZzF49X6BXgfAAIsH\nDXvKRXg/ajU3Kd64mH/pmd5122QYMZi8PjgkyJDI5aCX1FrsAEcFqSjowAvuvWYM\nopl2Rvv1MB4InOBqr7cGRMe3+QKBgQDFZOtwqKL6COUFVC1YlajQ+smku7HmM6vK\nqd2Bj3VLAuuJ+dehORUxf788Xedh654tncHk6j4LcF+6GH1LRxVo78h3NSfmulRI\nePcxXO1ysqnFe80zTmkYLhFX+kz0BXAoPqRm2Ci4RFQRYfDqlwxOa63aFmcnbj1b\nTB/g9Zao8QKBgH9jsTNM30sAQmgSjFJPUf8ETJEso01/O5H/Xieqoi+MA+AfQAlN\ncuHZ6KEE6uJc/h4EzH+o1mh7jlupq549EofdYE6bJJeY1wEr5wEdC8q/Zi1lWFrD\nR8PMNTdbTCAsF0XCyqcjWL8kn7mSz7yQrT/QGyRVvEBMNl9coekL4J35AoGAEg9F\nqy0CnDWsHmyxKWWn6FbJlBTIFfOsSAJ6jZv+czp1Kk59d/atBbZWXMOKo97Wvf2s\n+7CitJE3cONEs1pxjwRBJwbp+6YYh/jpRM7nupK2DadiAsutudSdKZtw5vKIbGYu\nzGoCb7lwp5Z6YDwpmBMp+MYL8gOYAX5ZfE971UECgYEAoqmkEhMxdjk5PVe0ukpv\nPz+Sv8/vwrvnrJtVLn+kgGPTaKImQu+rDamaJXv/gftFUO0kcH8E8JknuV19pvGM\n1KEHPbEYU0epZW+pYA+BpA+uSEXe7bBArWZbiKZI85VRtQ9MESdVx+xGLxqS+DO5\nZPOfdElggzx5bNOQNc5RS8g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-36a1s@ebeauty-csis4495.iam.gserviceaccount.com",
+  "client_id": "114792867230976388000",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-36a1s%40ebeauty-csis4495.iam.gserviceaccount.com"
+}

@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>e-Beauty Makeup Try-On</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/img/elogo.PNG}" />
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link th:href="@{/vendor/animate.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/aos.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap-icons.css}" rel="stylesheet">
+        <link th:href="@{/vendor/boxicons.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/remixicon.css}" rel="stylesheet">
+        <link th:href="@{/vendor/swiper-bundle.min.css}" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link th:href="@{/css/user_main.css}" rel="stylesheet">
+    </head>
+
+<body>
+
+  
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a th:href="@{/e-beauty.ca}">e-Beauty</a></h1>
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+         <li><a th:href="@{/user_profiles}">My Profile</a></li>
+          <li><a th:href="@{/main}">My eBeauty</a></li>
+          <li><a th:href="@{/user_consultings}">My Consultings</a></li>
+          <li><a  th:href="@{/user_tutorials}">Tutorials</a></li>
+          <li><a class="active" th:href="@{/user_ar}">Makeup Try-On</a></li>
+          <li></li>
+          <li><a><form th:action="@{/logout}" method="post"> 
+        	<input type="submit" value="Log Out" /> 
+		</form></a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+     </div>
+  </header><!-- End Header -->
+
+  <main id="main" data-aos="fade-in">
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <h2>Makeup Try-On</h2>
+        
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+<!-- ======= AR Area ======= -->
+<div class="container-fluid col-lg-10 align-itens-center">
+    <div class="row">
+	<div class="col-lg-4 float-right" onload="YMK.applyMakeupBySku">
+		<script>
+		(function (d,k) {
+		    var s = d.createElement('script');
+		    s.type = 'text/javascript';
+		    s.async = true;
+		    s.src = 'https://plugins-media.perfectcorp.com/smb/sdk.js?apiKey=' + k;
+		    var x = d.getElementsByTagName('script')[0];
+		    x.parentNode.insertBefore(s, x);
+		})(document, 'SMB-Ojo6NDE4NDY=');
+		</script>
+		<div id="YMK-module"></div>
+		
+		<script>
+		window.ymkAsyncInit = function() {
+		    YMK.open()
+		}
+		</script>
+
+	</div>
+	<div class="col-lg-2">
+	</div>
+	<div class="col-lg-4 float-left">
+	<br>
+	<br>
+	<br>
+    	<table class="table table-borderless">
+            <tbody>
+            		<tr style="font-weight:bolder;">Matte Lipsticks</tr>
+            		<br>
+                	<tr> <img th:src="@{/img/lip1.png}" onclick="YMK.applyMakeupBySku('lip1')"></tr>
+                    <tr> <img th:src="@{/img/lip2.png}" onclick="YMK.applyMakeupBySku('lip2')"> </tr>
+                    <tr> <img th:src="@{/img/lip3.png}" onclick="YMK.applyMakeupBySku('lip3')"> </tr>
+                    <tr> <img th:src="@{/img/lip4.png}" onclick="YMK.applyMakeupBySku('lip4')"> </tr>
+                    <tr> <img th:src="@{/img/lip5.png}" onclick="YMK.applyMakeupBySku('lip5')"> </tr>
+                    <tr> <img th:src="@{/img/lip6.png}" onclick="YMK.applyMakeupBySku('lip6')"> </tr>
+                    <tr> <img th:src="@{/img/lip7.png}" onclick="YMK.applyMakeupBySku('lip7')"> </tr>
+                    <tr> <img th:src="@{/img/lip8.png}" onclick="YMK.applyMakeupBySku('lip8')"> </tr>
+                    <tr> <img th:src="@{/img/lip9.png}" onclick="YMK.applyMakeupBySku('lip9')"> </tr>
+                    <tr> <img th:src="@{/img/lip10.png}" onclick="YMK.applyMakeupBySku('lip10')"> </tr>
+              </tbody>
+              </table>
+              
+              <table>
+     	      	 <tbody>
+                	<tr style="font-weight:bolder;">Gloss Lipsticks</tr>
+            		<br>
+                	<tr scope="row"> <img th:src="@{/img/g1.png}" onclick="YMK.applyMakeupBySku('gl1')"></tr>
+                    <tr> <img th:src="@{/img/g2.png}" onclick="YMK.applyMakeupBySku('gl2')"> </tr>
+                    <tr> <img th:src="@{/img/g5.png}" onclick="YMK.applyMakeupBySku('gl3')"> </tr>
+                    <tr> <img th:src="@{/img/g4.png}" onclick="YMK.applyMakeupBySku('gl4')"> </tr>
+          	  </tbody>
+        	</table>
+        	
+        	<table>
+           	 <tbody>
+                	<tr style="font-weight:bolder;">Creamy Lipsticks</tr>
+            		<br>
+                	<tr scope="row"> <img th:src="@{/img/s5.png}" onclick="YMK.applyMakeupBySku('lc1')"></tr>
+                    <tr> <img th:src="@{/img/s1.png}" onclick="YMK.applyMakeupBySku('lc2')"> </tr>
+                    <tr> <img th:src="@{/img/s6.png}" onclick="YMK.applyMakeupBySku('lc3')"> </tr>
+                    <tr> <img th:src="@{/img/s4.png}" onclick="YMK.applyMakeupBySku('lc4')"> </tr>
+                    <tr> <img th:src="@{/img/s7.png}" onclick="YMK.applyMakeupBySku('lc5')"> </tr>
+            </tbody>
+        	</table>
+        	<br>
+        	<table>
+           	 <tbody>
+               		<tr style="font-weight:bolder;">Blushs</tr>
+            		<br>
+                	<tr scope="row"> <img th:src="@{/img/b2.png}" onclick="YMK.applyMakeupBySku('sku-003')"></tr>
+                    <tr> <img th:src="@{/img/b1.png}" onclick="YMK.applyMakeupBySku('sku-002')"> </tr>
+                    <tr> <img th:src="@{/img/b3.png}" onclick="YMK.applyMakeupBySku('sku-001')"> </tr>
+
+            </tbody>
+        	</table>
+    </div>
+</div>
+
+
+<!-- AR Area -->
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+        <div class="footer1">
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><img th:src="@{/img/chevronright.png}"> <a href="contact.html">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"> <a href="terms.html">Terms of service</a></li>
+              </ul>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Receive tutorials and updates weekly!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>eBeauty</span></strong>. All Rights Reserved
+        </div>
+       
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="facebook"><img th:src="@{/img/facebook.png}"></a>
+        <a href="#" class="instagram"><img th:src="@{/img/instalogo.png}"></a>
+        <a href="#" class="linkedin"><img th:src="@{/img/linkedinlogo.png}"></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><img th:src="@{/img/arrow.png}"></a>
+
+  <!-- Vendor JS Files -->
+   <script type="text/javascript" th:src="@{/js/aos.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/validate.js}"></script>
+  <script type="text/javascript" th:src="@{/js/purecounter.js}"></script>
+  <script type="text/javascript" th:src="@{/js/swiper-bundle.min.js}"></script>
+
+  <!-- Template JS File -->
+  <script type="text/javascript" th:src="@{/js/script_user.js}"></script>
+</body>
+
+</html>

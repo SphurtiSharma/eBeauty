@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>e-Beauty Admin</title>
+    <meta name="description" content="e-Beauty">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your website">
+
+
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/cssad/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS
+    <link th:href="@{/cssad/all.css}" rel="stylesheet" type="text/css" />
+    -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link th:href="@{/cssad/style.css}" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <link rel="stylesheet" type="text/css" th:href="@{/cssad/Chart.min.css}" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css" />
+    <!-- END CSS for this page -->
+</head>
+
+<body class="adminbody">
+<!--MODAL-->
+
+<div class="modal fade" id="modal-Edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit User</h4>
+            </div>
+                            
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label id="lblemailUser" class="control-label col-md-2">E-mail:</label>
+                            <div class="col-md-10">
+                                <input type="text" value="" id="emailUser" name="emailUser" class="form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" id="UpdateButton" name="UpdateButton" class="btn btn-primary update">Update</button>
+            </div>
+        </div>
+       
+    </div>
+   
+</div>
+
+    <div id="main">
+
+        <!-- top bar navigation -->
+        <div class="headerbar">
+
+            <!-- LOGO -->
+            <div class="headerbar-left">
+                <a class="logo">
+                    <img alt="Logo" th:src="@{/img/elogo.PNG}" />
+                    <span>E-BEAUTY</span>
+                </a>
+                
+            </div>
+            <ul class="list-inline menu-left mb-0">
+                <li class="float-left">
+                    <button class="button-menu-mobile open-left">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="notif-bullet"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>
+                                        <span class="label label-danger pull-xs-right">5</span>Pending Approvals</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img th:src="@{/imgad/avatar2.png}" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>John Doe</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">3 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img th:src="@{/imgad/avatar3.png}" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Michaella Cox</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">30 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img th:src="@{/imgad/avatar4.png}" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Irma Dolores</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">1 hour ago</small>
+                                </p>
+                            </a>
+
+                            <!-- All-->
+                            <a th:href="@{/pending}"  class="dropdown-item notify-item notify-all">
+                                View All Pending Approvals
+                            </a>
+
+                        </div>
+                    </li>
+
+                    </li>
+
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <img th:src="@{/imgad/admin.png}" alt="Profile image" class="avatar-rounded">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow">
+                                    <small>  <b>[[${#request.userPrincipal.principal.fullName}]]</b> </small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a th:href="@{/profile}" class="dropdown-item notify-item">
+                                  <img th:src="@{imgad/person.svg}">
+                                <span>Profile</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                 <form th:action="@{/logout}" method="post"> 
+        						<input type="submit" value="Log Out" /> 
+								</form>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+
+
+            </nav>
+
+        </div>
+        <!-- End Navigation -->
+
+        <!-- Left Sidebar -->
+        <div class="left main-sidebar">
+
+            <div class="sidebar-inner leftscroll">
+
+                <div id="sidebar-menu">
+
+                    <ul>
+                        <li class="submenu">
+                             <a  th:href="@{/ebeauty-admin.ca}">
+                                <img th:src="@{/imgad/menu.png}" >
+                                <span> Users </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a class="active" th:href="@{/pending}">
+                                <img th:src="@{/imgad/hourglass.png}" >
+                                <span> Pending Approvals </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a th:href="@{/tutorials}">
+                                <img th:src="@{/imgad/file.png}" >
+                                <span> Tutorials </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a th:href="@{/consultings}">
+                                <img th:src="@{/imgad/video.png}" >
+                                <span> Consultings </span>
+                            </a>
+                        </li>
+                     </ul>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- End Sidebar -->
+
+  
+        <div class="content-page">
+
+            <!-- Start content -->
+            <div class="content">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb-holder">
+                                
+                                <ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item active">Experts</li>
+                                </ol>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+
+                                    <h3>
+                                        <i class="fa fa-hourglass-end"></i> Pending Approvals</h3>
+                                </div>
+                                <!-- end card-header -->
+
+                                <div class="card-body">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th style="min-width:300px">Expert details</th>
+                                                    <th style="width:120px">Category</th>
+                                                    <th style="min-width:110px;">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="user_avatar_list d-none d-none d-lg-block"><img alt="image" th:src="@{/imgad/avatar_small.png}" /></div>
+                                                        <h4>Lenna Brendan</h4>
+                                                        <p>lenna@website.com</p>
+                                                        <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
+                                                    </td>
+
+                                                    <td>Hair Style</td>
+
+
+                                                    <td>
+                                                        <a href="#" class="btn btn-primary btn-sm btn-block"><img th:src="@{/imgad/edit.svg}"> Edit</a>
+                                                        <a href="#" class="btn btn-danger btn-sm btn-block mt-2"><<img th:src="@{/imgad/trash.svg}"> Delete</a>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <div class="user_avatar_list d-none d-none d-lg-block"><img alt="image" th:src="@{/imgad/avatar_small.png}" /></div>
+                                                        <h4>Gabriel John</h4>
+                                                        <p>gabriel@website.com</p>
+                                                        <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
+                                                    </td>
+
+                                                    <td>Dress Advisory</td>
+
+
+                                                    <td>
+                                                        <a href="#" class="btn btn-primary btn-sm btn-block"><img th:src="@{/imgad/edit.svg}"> Edit</a>
+                                                        <a href="#" class="btn btn-danger btn-sm btn-block mt-2"><img th:src="@{/imgad/trash.svg}"> Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="user_avatar_list d-none d-none d-lg-block"><img alt="image" th:src="@{/imgad/avatar_small.png}" /></div>
+                                                        <h4>Bianca Mae</h4>
+                                                        <p>bianca@website.com</p>
+                                                        <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
+                                                    </td>
+
+                                                    <td>Makeup</td>
+
+                                                    <td>
+                                                        <a href="#" class="btn btn-primary btn-sm btn-block"><img th:src="@{/imgad/edit.svg}"> Edit</a>
+                                                        <a href="#" class="btn btn-danger btn-sm btn-block mt-2"><img th:src="@{/imgad/trash.svg}"> Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>
+                                                        <span class="user_avatar_list d-none d-none d-lg-block">
+                                                            <img alt="image" th:src="@{/imgad/avatar_small.png}" />
+                                                        </span>
+                                                        <h4>Jady Pink</h4>
+                                                        <p>jpink@website.com</p>
+                                                        <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
+                                                    </td>
+
+                                                    <td>Skin Care</td>
+
+                                                    <td>
+                                                        <a href="#" class="btn btn-primary btn-sm btn-block"><img th:src="@{/imgad/edit.svg}"> Edit</a>
+                                                        <a href="#" class="btn btn-danger btn-sm btn-block mt-2"><img th:src="@{/imgad/trash.svg}"> Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="user_avatar_list d-none d-none d-lg-block"><img alt="image" th:src="@{/imgad/avatar_small.png}" /></div>
+                                                        <h4>Paola Mazza</h4>
+                                                        <p>paola@website.com</p>
+                                                        <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
+                                                    </td>
+
+                                                    <td>Hair Style</td>
+
+                                                    <td>
+                                                        <a href="#" class="btn btn-primary btn-sm btn-block"><img th:src="@{/imgad/edit.svg}"> Edit</a>
+                                                        <a href="#" class="btn btn-danger btn-sm btn-block mt-2"><img th:src="@{/imgad/trash.svg}"> Delete</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                                <!-- end card-body -->
+
+                            </div>
+                            <!-- end card -->
+
+                        </div>
+                        <!-- end col -->
+
+                    </div>
+                    <!-- end row -->
+
+                </div>
+                <!-- END container-fluid -->
+
+            </div>
+            <!-- END content -->
+
+        </div>
+        <!-- END content-page -->
+
+        <footer class="footer">
+            <span class="text-right">                
+                Copyright <a target="_blank" href="#">e-Beauty</a>
+            </span>
+
+        </footer>
+
+        <script th:src="@{/js/modernizr.min.js}"></script>
+        <script th:src="@{/js/jquery.min.js}"></script>
+        <script th:src="@{/js/moment.min.js}"></script>
+
+        <script th:src="@{/js/popper.min.js}"></script>
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+
+        <script th:src="@{/js/detect.js}"></script>
+        <script th:src="@{/js/fastclick.js}"></script>
+        <script th:src="@{/js/jquery.blockUI.js}"></script>
+        <script th:src="@{/js/jquery.nicescroll.js}"></script>
+
+        <!-- App js -->
+        <script th:src="@{/js/admin.js}"></script>
+
+    </div>
+    <!-- END main -->
+
+    <!-- BEGIN Java Script for this page -->
+    <script th:src="@{/cssad/Chart.min.js}"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+
+    <!-- Counter-Up-->
+    <script th:src="@{/js/jquery.waypoints.min.js}"></script>
+    <script th:src="@{/js/jquery.counterup.min.js}"></script>
+
+    <!-- dataTabled data -->
+    <script src="assets/data/data_datatables.js"></script>
+
+    <!-- Charts data -->
+    <script src="assets/data/data_charts_dashboard.js"></script>
+    
+
+
+</body>
+
+</html>

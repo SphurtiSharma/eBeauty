@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>e-Beauty Admin</title>
+    <meta name="description" content="e-Beauty">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your website">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS 
+    <link href="assets/font-awesome/css/all.css" rel="stylesheet" type="text/css" />-->
+ 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/chart.js/Chart.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css" />
+    <!-- END CSS for this page -->
+</head>
+
+<body class="adminbody">
+<!--MODAL-->
+
+<div class="modal fade" id="modal-Edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit User</h4>
+            </div>
+                            
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label id="lblemailUser" class="control-label col-md-2">E-mail:</label>
+                            <div class="col-md-10">
+                                <input type="text" value="" id="emailUser" name="emailUser" class="form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" id="UpdateButton" name="UpdateButton" class="btn btn-primary update">Update</button>
+            </div>
+        </div>
+       
+    </div>
+   
+</div>
+
+    <div id="main">
+
+        <!-- top bar navigation -->
+        <div class="headerbar">
+
+            <!-- LOGO -->
+            <div class="headerbar-left">
+                <a class="logo">
+                    <img alt="Logo" th:src="@{/img/elogo.PNG}" />
+                    <span>E-BEAUTY</span>
+                </a>
+                
+            </div>
+            <ul class="list-inline menu-left mb-0">
+                <li class="float-left">
+                    <button class="button-menu-mobile open-left">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="notif-bullet"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>
+                                        <span class="label label-danger pull-xs-right">5</span>Pending Approvals</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img src="assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>John Doe</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">3 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img src="assets/images/avatars/avatar3.png" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Michaella Cox</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">30 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img src="assets/images/avatars/avatar4.png" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Irma Dolores</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">1 hour ago</small>
+                                </p>
+                            </a>
+
+                            <!-- All-->
+                            <a href="#" class="dropdown-item notify-item notify-all">
+                                View All Pending Approvals
+                            </a>
+
+                        </div>
+                    </li>
+
+                    </li>
+
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <img th:src="@{/imgad/admin.png}" alt="Profile image" class="avatar-rounded">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow">
+                                    <small> <b>[[${#request.userPrincipal.principal.fullName}]]</b> </small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a th:href="@{/profile}" class="dropdown-item notify-item">
+                                  <img th:src="@{imgad/person.svg}">
+                                <span>Profile</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                               <form th:action="@{/logout}" method="post"> 
+        						<input type="submit" value="Log Out" /> 
+								</form>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+
+
+            </nav>
+
+        </div>
+        <!-- End Navigation -->
+
+        <!-- Left Sidebar -->
+        <div class="left main-sidebar">
+
+            <div class="sidebar-inner leftscroll">
+
+                <div id="sidebar-menu">
+
+                    <ul>
+                        <li class="submenu">
+                          <a  th:href="@{/ebeauty-admin.ca}">
+                                <img th:src="@{/imgad/menu.png}" >
+                                <span> Users </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a  th:href="@{/pending}">
+                                  <img th:src="@{/imgad/hourglass.png}" >
+                                <span> Pending Approvals </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a class="active" th:href="@{tutorials}>
+                               <img th:src="@{/imgad/file.png}" >
+                                <span> Tutorials </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a th:href="@{/consultings}">
+                                <img th:src="@{/imgad/video.png}" >
+                                <span> Consultings </span>
+                            </a>
+                        </li>
+                     </ul>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="content-page">
+
+            <!-- Start content -->
+            <div class="content">
+
+                <div class="container-fluid">
+
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb-holder">
+                                <h1 class="main-title float-left">Add new tutorial</h1>
+                                <ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item">Home</li>
+                                    <li class="breadcrumb-item"><a th:href="@{/tutorials}">Tutorial</a></li>
+                                    <li class="breadcrumb-item active">Add new tutorial</li>
+                                </ol>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        <div class="row">
+
+                                            <div class="form-group col-xl-9 col-md-8 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Tutorial title</label>
+                                                    <input class="form-control" name="title" type="text" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Tutorial content</label>
+                                                    <textarea rows="3" class="form-control editor" name="content"></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Tutorial image</label><br />
+                                                    <input type="file" name="image">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <button type="button" class="btn btn-primary">Add Tutorial</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-xl-3 col-md-4 col-sm-12 border-left">
+                                                <div class="form-group">
+                                                    <label>Meta title</label>
+                                                    <input type="text" class="form-control" name="meta_title">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Meta description</label>
+                                                    <input type="text" class="form-control" name="meta_description">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Tags</label>
+                                                    <input type="text" class="form-control" name="keywords" id="tags" value="">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Tutorial status</label>
+                                                    <select name="status" class="form-control">
+                                                        <option value="active">Active</option>
+                                                        <option value="draft">Save draft</option>
+                                                        <option value="inactive">Inactive</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Select category</label>
+                                                    <select name="categ_id" class="form-control" required>
+                                                        <option value="dressing">Dressing Advisory</option>
+                                                        <option value="hair">Hair Style</option>
+                                                        <option value="makeup">Makeup</option>
+                                                        <option value="skin">Skin Care</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                        </div><!-- end row -->
+                                    </form>
+
+                                </div>
+                                <!-- end card-body -->
+
+                            </div>
+                            <!-- end card -->
+
+                        </div>
+                        <!-- end col -->
+
+                    </div>
+                    <!-- end row -->
+
+                </div>
+                <!-- END container-fluid -->
+
+            </div>
+            <!-- END content -->
+
+        </div>
+        <!-- END content-page -->
+
+        <footer class="footer">
+            <span class="text-right">                
+                Copyright <a target="_blank" href="#">e-Beauty</a>
+            </span>
+
+        </footer>
+
+        <script th:src="@{/js/modernizr.min.js}"></script>
+        <script th:src="@{/js/jquery.min.js}"></script>
+        <script th:src="@{/js/moment.min.js}"></script>
+
+        <script th:src="@{/js/popper.min.js}"></script>
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+
+        <script th:src="@{/js/detect.js}"></script>
+        <script th:src="@{/js/fastclick.js}"></script>
+        <script th:src="@{/js/jquery.blockUI.js}"></script>
+        <script th:src="@{/js/jquery.nicescroll.js}"></script>
+
+        <!-- App js -->
+        <script th:src="@{/js/admin.js}"></script>
+
+    </div>
+    <!-- END main -->
+
+    <!-- BEGIN Java Script for this page -->
+      <script th:src="@{/cssad/Chart.min.js}"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+
+    <!-- Counter-Up-->
+    <script th:src="@{/js/jquery.waypoints.min.js}"></script>
+    <script th:src="@{/js/jquery.counterup.min.js}"></script>
+
+    <!-- dataTabled data -->
+    <script src="assets/data/data_datatables.js"></script>
+
+    <!-- Charts data -->
+    <script src="assets/data/data_charts_dashboard.js"></script>
+    
+
+
+</body>
+
+</html>

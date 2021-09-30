@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>e-Beauty Expert Sign Up</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/img/elogo.PNG}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles_signup.css}">
+</head>
+<body class="signup_expert">
+    <div class="registration-form">
+        <form  th:action="@{/expert_register}" th:object="${user}" method="post" enctype="multipart/form-data">
+            <h3>Register as an Expert</h3>
+        
+            <div class="form-group">
+                <input type="text" class="form-control item" id="username" placeholder="Full Name" th:field="*{fullName}" required 
+                		minlength="4" maxlength="20"/>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control item" id="password" placeholder="Password" th:field="*{password}" required 
+                		minlength="6" maxlength="20"/>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control item" id="email" placeholder="Email" th:field="*{email}" required />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="address" placeholder="Address">
+            </div>
+            <div class="form-group">
+             <select class="form-control item" name="category" id="category">
+                <option value="dress">Choose a category</option>
+                <option value="dress">Dressing</option>
+                <option value="hair">Hair Style</option>
+                <option value="makeup">Makeup</option>
+                <option value="skin">Skin Care</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="bank" placeholder="Bank Number">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="transit" placeholder="Transit Number">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="account" placeholder="Account Number">
+            </div>
+            <div class="form-group form-control item" >
+                <label for="lresume">Upload your Resume</label> 
+                 <input  type="file" id="resume" name="resume_file" >
+            </div>
+            <div class="form-group">
+                <select class="form-control item" name="acc_type" id="acc_type">
+                   <option value="dress">Account Type</option>
+                   <option value="dress">Free</option>
+                   <option value="hair">Premium</option>
+               </select>
+               </div>
+            
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">Create Account</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

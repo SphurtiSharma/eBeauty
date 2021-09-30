@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>e-Beauty Online LogIn</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/img/elogo.PNG}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    </head>
+    <body class="body-login">
+        <div >
+            <div class="popup-login">
+               <div class="form-login">
+                <h2>Login</h2>
+                <form th:action="@{/login}" method="post">
+<!--                 error message -->
+                <div th:if="${param.error}">
+                	<div class="alert alert-danger">Invalid username or password
+                	</div>
+                	
+                </div>
+                
+<!--                 logout message -->
+                <div th:if="${param.logout}">
+                	<div class="alert alert-info">You have been logged out.
+                	</div>
+                	
+                </div>
+                
+                <div class="form-element-login">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class = "form-control" placeholder="Enter email"
+                    	required autofocus />
+    
+                </div>
+                <div class="form-element-login">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter password"
+                    	required autofocus />
+                </div>
+                <div class="form-element-login">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div class="form-element-login ">
+                    <div class="row">
+                    	<div class = "col-sm-6 col-sm-offset-3">
+                    		<input type="submit" class="form-control btn btn-primary" value="Log In"/>
+                    	</div>
+                    </div>
+                </div>
+                <div class="form-element-login ">
+                    <a class="forgot" href="#">Forgot Password?</a>
+                </div>
+                
+                
+                </form>
+            </div>
+           </div>
+        </div>
+    </body>
+      
+       
+    </html>

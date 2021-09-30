@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>e-Beauty Admin</title>
+    <meta name="description" content="e-Beauty">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your website">
+
+
+    <!-- Bootstrap CSS -->
+    <link th:href="@{/cssad/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS 
+    <link th:href="@{/cssad/all.css}" rel="stylesheet" type="text/css" />-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link th:href="@{/cssad/style.css}" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <link rel="stylesheet" type="text/css" th:href="@{/cssad/Chart.min.css}" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css" />
+    <!-- END CSS for this page -->
+</head>
+
+<body class="adminbody">
+<!--MODAL-->
+
+<div class="modal fade" id="modal-Edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit User</h4>
+            </div>
+                            
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label id="lblemailUser" class="control-label col-md-2">E-mail:</label>
+                            <div class="col-md-10">
+                                <input type="text" value="" id="emailUser" name="emailUser" class="form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" id="UpdateButton" name="UpdateButton" class="btn btn-primary update">Update</button>
+            </div>
+        </div>
+       
+    </div>
+  
+    
+</div>
+
+    <div id="main">
+
+        <!-- top bar navigation -->
+        <div class="headerbar">
+
+            <!-- LOGO -->
+            <div class="headerbar-left">
+                <a  class="logo">
+                    <img alt="Logo" th:src="@{/imgad/elogo.PNG}" />
+                    <span>E-BEAUTY</span>
+                </a>
+                
+            </div>
+            <ul class="list-inline menu-left mb-0">
+                <li class="float-left">
+                    <button class="button-menu-mobile open-left">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="notif-bullet"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5>
+                                    <small>
+                                        <span class="label label-danger pull-xs-right">3</span>Pending Approvals</small>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img th:src="@{/imgad/avatar2.png}" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>John Doe</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">3 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img th:src="@{/imgad/avatar3.png}" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Michaella Cox</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">30 minutes ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-faded">
+                                    <img th:src="@{/imgad/avatar4.png}" alt="img" class="rounded-circle img-fluid">
+                                </div>
+                                <p class="notify-details">
+                                    <b>Irma Dolores</b>
+                                    <span>Expert registration</span>
+                                    <small class="text-muted">1 hour ago</small>
+                                </p>
+                            </a>
+
+                            <!-- All-->
+                            <a th:href="@{/pending}" class="dropdown-item notify-item notify-all">
+                                View All Pending Approvals
+                            </a>
+
+                        </div>
+                    </li>
+
+                    </li>
+
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
+                            <img th:src="@{/imgad/admin.png}" alt="Profile image" class="avatar-rounded">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <div class="dropdown-item noti-title">
+                                <h5 class="text-overflow">
+                                <div> 
+                                    <small>  <b>[[${#request.userPrincipal.principal.fullName}]]</b> <span ></span></small>
+                                    </div>
+                                </h5>
+                            </div>
+
+                            <!-- item-->
+                            <a th:href="@{/profile}" class="dropdown-item notify-item">
+                                <img th:src="@{imgad/person.svg}">
+                                <span>Profile</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="#" class="dropdown-item notify-item">
+                                
+                                <form th:action="@{/logout}" method="post"> 
+        						<input type="submit" value="Log Out" /> 
+								</form>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+
+
+            </nav>
+
+        </div>
+        <!-- End Navigation -->
+
+        <!-- Left Sidebar -->
+        <div class="left main-sidebar">
+
+            <div class="sidebar-inner leftscroll">
+
+                <div id="sidebar-menu">
+
+                    <ul>
+                        <li class="submenu">
+                            <a class="active" th:href="@{/ebeauty-admin.ca}">
+                                <img th:src="@{/imgad/menu.png}" >
+                                <span> Users </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a th:href="@{/pending}">
+                                  <img th:src="@{/imgad/hourglass.png}" >
+                                <span> Pending Approvals </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a th:href="@{/tutorials}">
+                                <img th:src="@{/imgad/file.png}" >
+                                <span> Tutorials </span>
+                            </a>
+                        </li>
+
+                        <li class="submenu">
+                            <a th:href="@{/consultings}">
+                                <img th:src="@{/imgad/video.png}" >
+                                <span> Consultings </span>
+                            </a>
+                        </li>
+                     </ul>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="content-page">
+
+            <!-- Start content -->
+            <div class="content">
+
+                <div class="container-fluid">
+
+
+                   
+                    <!-- end row -->
+
+                       </div>
+
+                        <div class="col-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h3><i class="fa fa-user-friends"></i> Users </h3>
+
+                                    <span class="pull-right">
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_add_user">
+                                            <img th:src="@{/imgad/plus.png}"> Add new user</button>
+                                    </span>
+                                    <div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-labelledby="modal_add_user" aria-hidden="true" id="modal_add_user">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <form action="#" method="post" enctype="multipart/form-data">
+
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Add new user</h5>
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            <span class="sr-only">Close</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="form-group">
+                                                                    <label>Full name (required)</label>
+                                                                    <input class="form-control" name="name" type="text" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label>Valid Email (required)</label>
+                                                                    <input class="form-control" name="email" type="email" required />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label>Password (required)</label>
+                                                                    <input class="form-control" name="password" type="text" required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label>Role</label>
+                                                                    <select name="role_id" class="form-control" required>
+                                                                        <option value="">- select -</option>
+                                                                        <optgroup label="Staff member">
+                                                                            <option value="1">Administrator</option>
+                                                                        </optgroup>
+
+                                                                        <optgroup label="User member">
+                                                                            <option value="2">Expert</option>
+                                                                            <option value="3">User</option>
+                                                                        </optgroup>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                      
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label>Category</label>
+                                                                    <select name="email_verified" class="form-control">
+                                                                        <option value="">Dress Advisory</option>
+                                                                        <option value="">Hair Style</option>
+                                                                        <option value="">Makeup</option>
+                                                                        <option value="">Skin Care</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <label>Active</label>
+                                                                    <select name="active" class="form-control">
+                                                                        <option value="1">YES</option>
+                                                                        <option value="0">NO</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary">Add user</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+
+                                <div class="card-body">
+
+                                    <div class="table-responsive">
+                                        <table id="dataTable" class="table table-bordered table-hover display" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Full Name</th>
+                                                    <th>Email</th>
+                                                    <th>Role</th>
+                                                    <th>Manage</th>
+                                                 
+
+                                                </tr>
+
+                                            </thead>
+                                            <tbody>
+                                            <tr th:each="user: ${listUsers}">
+                                            	<td th:text="${user.id}">ID</td>
+                                                <td th:text="${user.fullName}">Full Name</td>
+                                                <td th:text="${user.email}">Email</td>
+                                                <td th:text="${user.roles}">Role</td>
+                                                <td><a th:href="@{'/ebeauty-admin.ca/edit/' + ${user.id}}">Edit</a></td>
+                                                <!-- <td>
+                                                	<a th:href="@{'/adminmain/update/' + ${user.email}">Update</a>
+                                                </td> -->
+                                                
+                                               <!--  <td>
+                                                    
+                                                    <button type="submit" id="UpdateButton" name="UpdateButton" class="btn btn-user update pull-right">Update</button>
+                                                  
+                                                    <button type="button" id="DeleteButton" name="DeleteButton"class="btn  btn-user delete pull-left" >Delete</button>
+                                                </td> -->
+                                            </tr>
+                                        
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end table-responsive-->
+
+                                </div>
+                                <!-- end card-body-->
+                            </div>
+                            <!-- end card-->
+                        </div>
+
+                    </div>
+                    <!-- end row-->
+
+                </div>
+                <!-- END container-fluid -->
+
+            </div>
+            <!-- END content -->
+
+        </div>
+        <!-- END content-page -->
+
+        <footer class="footer">
+            <span class="text-right">                
+                Copyright <a target="_blank" href="#">e-Beauty</a>
+            </span>
+
+        </footer>
+
+        <script th:src="@{/js/modernizr.min.js}"></script>
+        <script th:src="@{/js/jquery.min.js}"></script>
+        <script th:src="@{/js/moment.min.js}"></script>
+
+        <script th:src="@{/js/popper.min.js}"></script>
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+
+        <script th:src="@{/js/detect.js}"></script>
+        <script th:src="@{/js/fastclick.js}"></script>
+        <script th:src="@{/js/jquery.blockUI.js}"></script>
+        <script th:src="@{/js/jquery.nicescroll.js}"></script>
+
+        <!-- App js -->
+        <script th:src="@{/js/admin.js}"></script>
+
+    </div>
+    <!-- END main -->
+
+    <!-- BEGIN Java Script for this page -->
+    <script th:src="@{/cssad/Chart.min.js}"></script>
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+
+    <!-- Counter-Up-->
+    <script th:src="@{/js/jquery.waypoints.min.js}"></script>
+    <script th:src="@{/js/jquery.counterup.min.js}"></script>
+
+
+
+
+    
+
+
+</body>
+
+</html>
