@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>e-Beauty - Choose a Plan</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/img/elogo.PNG}" />
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link th:href="@{/vendor/animate.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/aos.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap-icons.css}" rel="stylesheet">
+        <link th:href="@{/vendor/boxicons.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/remixicon.css}" rel="stylesheet">
+        <link th:href="@{/vendor/swiper-bundle.min.css}" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link th:href="@{/css/user_main.css}" rel="stylesheet">
+    </head>
+
+<body>
+
+
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a th:href="@{/e-beauty.ca}">e-Beauty</a></h1>
+    
+    </div>
+</header><!-- End Header -->
+
+<main id="main" data-aos="fade-in">
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>Premium admission</h2>
+        <p>Get the best experience from e-Beauty by choosing our premium account! </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+
+    <!-- ======= Pricing Section ======= -->
+  <div class="padding-pay" d-flex justify-content-center>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card-pay">
+                <div class="card-header-pay text-center">
+                    <h4><strong>Place your Payment</strong></h4>
+                   
+                </div>
+                <div class="card-body-pay">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <br>
+                                <input class="form-control-pay" id="name" type="text" placeholder="Card holder's name" size="40">
+                                
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="ccnumber">Credit Card Number</label>
+                                <br>
+                                <div class="row">
+                                    <input class="form-control-pay" id="creditcard" type="text" placeholder="0000 0000 0000 0000" style="width:200px; margin-left:12px;" >
+                                    &nbsp; 
+                                    
+                                        <span class="input-group-text" style="width:50px">
+                                             <img th:src="@{/img/credit-card-regular.svg}" style="width:40px">
+                                             
+                                        </span>
+                                    
+                                    <br>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-4">
+                            <label for="ccmonth">Month</label>
+                            <select class="form-control-pay" id="ccmonth" required>
+                         	   <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="ccyear">Year</label>
+                            <select class="form-control-pay" id="ccyear" required>
+                           		 <option></option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                                <option>2028</option>
+                                <option>2029</option>
+                                <option>2030</option>
+                                <option>2031</option>
+                                
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="cvv">CVV</label>
+                                <input class="form-control-pay" id="cvv" type="text" placeholder="" maxlength="3" size="3" required>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                <div class="card-footer">
+                <button class="btn btn-sm btn-danger" type="reset" >
+                         Clear</button>
+                    <button class="btn btn-sm btn-success float-right" type="submit" style="float:right">
+                        <a th:href="@{/main}" style="text-decoration:none; color:white;"> Process Pay</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+        <div class="footer1">
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}" target="_blank">Terms of service</a></li>
+              </ul>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Receive tutorials and updates weekly!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>eBeauty</span></strong>. All Rights Reserved
+        </div>
+       
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="facebook"><img th:src="@{/img/facebook.png}"></a>
+        <a href="#" class="instagram"><img th:src="@{/img/instalogo.png}"></a>
+        <a href="#" class="linkedin"><img th:src="@{/img/linkedinlogo.png}"></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><img th:src="@{/img/arrow.png}"></a>
+
+  <!-- Vendor JS Files -->
+   <script type="text/javascript" th:src="@{/js/aos.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/validate.js}"></script>
+  <script type="text/javascript" th:src="@{/js/purecounter.js}"></script>
+  <script type="text/javascript" th:src="@{/js/swiper-bundle.min.js}"></script>
+
+  <!-- Template JS File -->
+  <script type="text/javascript" th:src="@{/js/script_user.js}"></script>
+</body>
+
+</html>

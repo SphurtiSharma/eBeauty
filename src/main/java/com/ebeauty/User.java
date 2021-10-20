@@ -38,14 +38,14 @@ public class User {
 	@Column(nullable=false, unique=true, length=45)
 	private String email;
 	
-	@Column(nullable=false, unique=false, length=45)
+	@Column(nullable=false, unique=true, length=45)
 	private String fullName;
 	
-	@Column(nullable=false, unique=false, length=64)
+	@Column(nullable=false, unique=true, length=64)
 	private String password;
 	
 	//new column for storing resume link
-	@Column(nullable=false, unique=false, length=64)
+	@Column(nullable=true, unique=true, length=64)
 	private String resume_link;
 	
 

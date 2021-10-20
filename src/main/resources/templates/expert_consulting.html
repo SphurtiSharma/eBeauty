@@ -102,9 +102,9 @@
       
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-            <li><a th:href="@{/expertprofiles}">My Profile</a></li>
+            <li><a th:href="@{/expert_profile}">My Profile</a></li>
             <li><a class="active" th:href="@{/expert_consultings}">My consultings</a></li>
-            <li><a  th:href="@{/expertmain}">My Tutorials</a></li>
+            <li><a  th:href="@{/expert_main}">My Tutorials</a></li>
              <li><a><form th:action="@{/logout}" method="post"> 
         	<input type="submit" value="Log Out" /> 
 		</form></a></li> 
@@ -133,11 +133,11 @@
         <h4>Upcoming Consultings</h4>
         <hr>
         
-        <ul>
-          <li class="d-flex align-items-center"><i class="bi bi-calendar-week"> </i> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
-            <i class="bi bi-file-earmark-person"></i>&nbsp;&nbsp;Mary Kym&nbsp;&nbsp;
-            <i class="bi bi-clock"></i>&nbsp;&nbsp;05-Aug-2021 9:00am&nbsp;&nbsp;
-            <i class="bi bi-bookmark-check"></i>&nbsp;&nbsp;<strong>Confirmed</strong>
+                <ul>
+          <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}"> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
+            <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Mary Kym&nbsp;&nbsp;
+            <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;05-Aug-2021 9:00am&nbsp;&nbsp;
+            <img th:src="@{/img/bookmark-check.svg}">&nbsp;&nbsp;<strong>Confirmed</strong>
           </li>
         </ul>
         <div class="row">
@@ -149,10 +149,10 @@
 
           <hr>
           <ul>
-            <li class="d-flex align-items-center"><i class="bi bi-calendar-week"> </i> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
-              <i class="bi bi-file-earmark-person"></i>&nbsp;&nbsp;Mara Silva&nbsp;&nbsp;
-              <i class="bi bi-clock"></i>&nbsp;&nbsp;06-Aug-2021 9:00am&nbsp;&nbsp;
-              <i class="bi bi-bookmark-check"></i>&nbsp;&nbsp;<strong>Confirmed</strong>
+            <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}">&nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
+              <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Mara Silva&nbsp;&nbsp;
+              <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;06-Aug-2021 9:00am&nbsp;&nbsp;
+               <img th:src="@{/img/bookmark-check.svg}">&nbsp;&nbsp;<strong>Confirmed</strong>
             </li>
           </ul>
           <div class="row">
@@ -169,10 +169,10 @@
         <hr>
         
         <ul>
-          <li class="d-flex align-items-center"><i class="bi bi-calendar-week"> </i> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
-            <i class="bi bi-file-earmark-person"></i>&nbsp;&nbsp;Lana Rios&nbsp;&nbsp;
-            <i class="bi bi-clock"></i>&nbsp;&nbsp;06-Aug-2021 10:00 am&nbsp;&nbsp;
-            <i class="bi bi-bookmark-dash-fill"></i>&nbsp;&nbsp;<strong>Pending</strong>
+          <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}"> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
+            <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Lana Rios&nbsp;&nbsp;
+            <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;06-Aug-2021 10:00 am&nbsp;&nbsp;
+            <img th:src="@{/img/bookmark-check.svg}">&nbsp;&nbsp;<strong>Pending</strong>
           </li>
         </ul>
         <div class="row">
@@ -189,10 +189,10 @@
 
           <hr>
           <ul>
-            <li class="d-flex align-items-center"><i class="bi bi-calendar-week"> </i> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
-              <i class="bi bi-file-earmark-person"></i>&nbsp;&nbsp;Kelly Lee&nbsp;&nbsp;
-              <i class="bi bi-clock"></i>&nbsp;&nbsp;07-Aug-2021 18:00pm&nbsp;&nbsp;
-              <i class="bi bi-bookmark-dash-fill"></i>&nbsp;&nbsp;<strong>Pending</strong>
+            <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}"> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
+              <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Kelly Lee&nbsp;&nbsp;
+              <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;07-Aug-2021 18:00pm&nbsp;&nbsp;
+              <img th:src="@{/img/bookmark-check.svg}">&nbsp;&nbsp;<strong>Pending</strong>
             </li>
           </ul>
           <div class="row">
@@ -215,9 +215,9 @@
 
             <div class="d-flex justify-content-between align-items-center mt-3">
               <ul class="nav nav-tabs w-75">
-                <li class="nav-item"> <a class="nav-link " th:href="@{/expert_consultings}">Active Offers</a> </li>
+                <li class="nav-item"> <a class="nav-link active" th:href="@{/expert_consultings}">Active Offers</a> </li>
                 <li class="nav-item"> <a class="nav-link " th:href="@{/expert_pastOffer}">Past Offers</a> </li>
-                <li class="nav-item"> <a class="nav-link active" th:href="@{/expert_earnings}">Earnings</a> </li>
+                <li class="nav-item"> <a class="nav-link " th:href="@{/expert_earnings}">Earnings</a> </li>
                 <li class="nav-item"> <a class="nav-link " th:href="@{/expert_reviews}">Reviews</a> </li>
               </ul> 
           </div>
@@ -314,8 +314,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><img th:src="@{/img/chevronright.png}">  <a href="contact.html">Contact</a></li>
-              <li><img th:src="@{/img/chevronright.png}">  <a href="terms.html">Terms of service</a></li>
+              <li><img th:src="@{/img/chevronright.png}"> <a th:href="@{/contact_ep}">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms} "target="_blank">Terms of service</a></li>
               </ul>
           </div>
 

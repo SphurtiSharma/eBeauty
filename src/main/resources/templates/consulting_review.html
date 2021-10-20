@@ -45,6 +45,7 @@
           <li><a th:href="@{/main}">My eBeauty</a></li>
           <li><a class="active" th:href="@{/user_consultings}">My Consultings</a></li>
           <li><a th:href="@{/user_tutorials}">Tutorials</a></li>
+          <li><a th:href="@{/user_ar}">Makeup Try-On</a></li>
           <li></li>
           <li><a th:action="@{/logout}" method="post"> 
         	<input type="submit" value="Log Out" /> 
@@ -187,8 +188,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><img th:src="@{/img/chevronright.png}"><a href="contact.html">Contact</a></li>
-              <li><img th:src="@{/img/chevronright.png}"> <a href="terms.html">Terms of service</a></li>
+              <li><img th:src="@{/img/chevronright.png}"> <a th:href="@{/contact_up}">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}"target="_blank">Terms of service</a></li>
               </ul>
           </div>
 
