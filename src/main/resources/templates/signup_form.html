@@ -10,6 +10,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" th:href="@{/css/styles_signup.css}">
+    <script defer>
+    
+	    var message = "[[${email_error_msg}]]";
+	    if(message !== ""){
+			alert(message);
+		}
+	    
+	   
+	</script>
 </head>
 <body class="signup_client">
     <div class="registration-form">

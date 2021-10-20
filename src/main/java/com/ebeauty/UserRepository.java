@@ -8,8 +8,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	//the query to find user by the first parameter which is email 
 	
-	  @Query("SELECT u FROM User u WHERE u.email=?1") 
-	  User findByEmail(String email);
+	  @Query("SELECT u FROM User u WHERE u.email=:email") 
+	  User findByEmail( @Param("email")String email);
 	 
 	
 	
