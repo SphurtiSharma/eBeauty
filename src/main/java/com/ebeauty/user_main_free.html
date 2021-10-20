@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>e-Beauty Main Page</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/img/elogo.PNG}" />
+        <!-- Favicons -->
+        <link type="image/ico" th:href="@{/img/favicon.png}" rel="icon">
+        <link type="image/ico" th:href="@{/img/apple-touch-icon.png}" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+		
+        <!-- Vendor CSS Files -->
+        <link th:href="@{/vendor/animate.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/aos.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap-icons.css}" rel="stylesheet">
+        <link th:href="@{/vendor/boxicons.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/remixicon.css}" rel="stylesheet">
+        <link th:href="@{/vendor/swiper-bundle.min.css}" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link th:href="@{/css/user_main.css}" rel="stylesheet">
+    </head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+		
+    
+        <h1 class="logo me-auto">e-Beauty</h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a th:href="@{/user_profile_free}">My Profile</a></li>
+          <li><a class="active" th:href="@{/main_free}">My eBeauty</a></li>
+          <li><a th:href="@{/user_consultings_free}">My Consultings</a></li>
+          <li></li>
+          <li><a><form th:action="@{/logout}" method="post"> 
+        	<input type="submit" value="Log Out" /> 
+		</form></a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+        
+     </div>
+  </header><!-- End Header -->
+
+<main id="main" data-aos="fade-in">
+<!-- search tool-->
+
+<div class="row">
+    <div class="sidebar">
+
+      <h3 class="sidebar-title">Search</h3>
+      <div class="sidebar-item search-form">
+        <form action="">
+          <input type="text">
+          <button type="submit"><img th:src="@{/img/searchlogo.png}"></button>
+        </form>
+      </div>
+
+        <div class="form-group">
+        <select class="form-control item" name="category" id="category">
+           <option value="dress">Choose a category</option>
+           <option value="dress">Dressing Advisory</option>
+           <option value="hair">Hair Style</option>
+           <option value="makeup">Makeup</option>
+           <option value="skin">Skin Care</option>
+       </select>
+       </div>
+    </div>
+</div><!-- End search tool-->
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container" >
+        <h2>Welcome, <b>[[${#request.userPrincipal.principal.fullName}]]</b></h2>
+        <p>These are our beauty recommendations for you! </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Courses Section ======= -->
+    <section id="courses" class="courses">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row"  data-aos="zoom-in" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="course-item">
+                <div class="course-img"><img th:src="@{/img/wed-makeup.jpg}" class="img-fluid" alt="..."></div>
+              
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4><a th:href="@{/detail1}">Details</a></h4>
+                  
+                </div>
+
+                <h3><a th:href="@{/detail1}">Wedding Makeup</a></h3>
+                <p>If you're planning to get gorgeous on your wedding day but intend to do it on your own or with the help of family or friends, this consulting is definitely for you. </p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img th:src="@{/img/trainer-1.jpg}" class="img-fluid" alt="">
+                    <span>by Mary Kym</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <img th:src="@{/img/user.png}">&nbsp;50
+                    &nbsp;&nbsp;
+                    <img th:src="@{/img/heart.png}">&nbsp;65
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="course-item">
+                <div class="course-img"><img th:src="@{/img/eyebrow.jpg}" class="img-fluid" alt="..."></div>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4><a th:href="@{/detail2}">Details</a></h4>
+                  
+                </div>
+
+                <h3><a th:href="@{/detail2}">Eyebrows Improvement</a></h3>
+                <p>If you're not happy with your eyebrows, this consulting is for you! I can give you tips on how to make your eyebrows grow stronger and faster. You will also learn how to shape it and enhance its color.</p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img th:src="@{/img/trainer-2.jpg}" class="img-fluid" alt="">
+                    <span>by Lana Rios</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <img th:src="@{/img/user.png}">&nbsp;35
+                    &nbsp;&nbsp;
+                    <img th:src="@{/img/heart.png}">&nbsp;42
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="course-item">
+                <div class="course-img"><img th:src="@{/img/damaged-hair.jpg}" class="img-fluid" alt="..."></div>
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4><a th:href="@{/detail3}">Details</a></h4>
+                  
+                </div>
+
+                <h3><a th:href="@{/detail3}">Damaged hair</a></h3>
+                <p>If you feel that your hair is damaged and lifeless, join this tutorial! Healthy hair is the key to achieve beauty, improve your looks and confidence! </p>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img th:src="@{/img/trainer-3.jpg}" class="img-fluid" alt="">
+                    <span>by Brandon Cook</span>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <img th:src="@{/img/user.png}">&nbsp;20
+                    &nbsp;&nbsp;
+                    <img th:src="@{/img/heart.png}">&nbsp;85
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+    <!-- ======= Tutorials Section ======= -->
+    <div class="video-wrapper">
+
+                <div class="video-video-1">
+                    <iframe width="350" height="200" th:src="@{http://www.youtube.com/embed/hz0Czo3Y3io}" frameborder="0" allowfullscreen="1"></iframe>
+                    <div class="video-desc">
+                        <p>Smooth flawless foundation for textured skin</p>
+                    </div>
+                    <div class="trainer-rank d-flex align-items-center">
+                        <img th:src="@{/img/heart.png}">&nbsp;120
+                      </div>
+                </div>
+
+                <div class="video-video-2">
+                    <iframe width="350" height="200" th:src="@{http://www.youtube.com/embed/BugC71BYEmg}" frameborder="0" allowfullscreen="1"></iframe>
+                    <div class="video-desc">
+                        <p>The Makeup Facelift</p>
+                    </div>
+                    <div class="trainer-rank d-flex align-items-center">
+                        <img th:src="@{/img/heart.png}">&nbsp;99
+                      </div>
+                </div>
+
+                <div class="video-video-3">
+                    <iframe width="350" height="200" th:src="@{https://www.youtube.com/embed/v14kzzi7oHo}" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-desc">
+                        <p>What to wear to a job interview</p>
+                    </div>
+                    <div class="trainer-rank d-flex align-items-center">
+                        <img th:src="@{/img/heart.png}">&nbsp;72
+                      </div>
+                </div>
+
+            <!-- End Tutorial Item-->
+
+    </div>
+
+</div>
+</div>
+    </section><!-- End Courses Section -->
+
+<!-- Experts -->
+    <div class="experts">
+        <div class="row form-group form-control item">
+            <div class="blog-author search-right">
+                <img th:src="@{/img/exp1.jpg}" class="rounded-circle" alt="">
+            </div>
+            <div>
+              <h4>Jane Lee</h4>
+              <a th:src="@{https://facebook.com/#}"><img th:src="@{/img/facebook.png}"></a>
+              <a th:src="@{https://instagram.com/#}"><img th:src="@{/img/instalogo.png}"></a>
+            </div>
+            <div>
+              <p>
+                I have over 10 years of experience with different types of hair. 
+                I can help you decide the best haircut for you and give tips on great and affordable products available in local stores.
+              </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="experts">
+        <div class="row form-group form-control item">
+            <div class="blog-author search-right">
+                <img th:src="@{/img/exp2.jpg}" class="rounded-circle" alt="">
+            </div>
+            <div>
+              <h4>Adam Mills</h4>
+              <a th:src="@{https://facebook.com/#}"><img th:src="@{/img/facebook.png}"></a>
+              <a th:src="@{https://instagram.com/#}"><img th:src="@{/img/instalogo.png}"></a>
+            </div>
+            <div>
+              <p>
+                You can improve your skin from home! With the right products and techniques, you can see results within 2 weeks.
+                Brighter and softener skin is the key to improve your confidence and your looks!
+              </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="experts">
+        <div class="row form-group form-control item">
+            <div class="blog-author search-right">
+                <img th:src="@{/img/exp3.jpg}" class="rounded-circle" alt="">
+            </div>
+            <div>
+              <h4>Sammir Habba</h4>
+              <a th:src="@{https://facebook.com/#}"><img th:src="@{/img/facebook.png}"></a>
+              <a th:src="@{https://instagram.com/#}"><img th:src="@{/img/instalogo.png}"></a>
+            </div>
+            <div>
+              <p>
+                The correct dressing for a party, a meeting, a job interview, or simply a first date! 
+                You don´t have to buy new clothes every time you have something important, 
+                sometimes is just a matter of matching the right pieces.
+              </p>
+            </div>
+        </div>
+    </div><!-- End experts-->
+        
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+        <div class="footer1">
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><img th:src="@{/img/chevronright.png}"> <a th:href="@{/contact_uf}">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}" target="_blank">Terms of service</a></li>
+              </ul>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Receive tutorials and updates weekly!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>eBeauty</span></strong>. All Rights Reserved
+        </div>
+       
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="facebook"><img th:src="@{/img/facebook.png}"></a>
+        <a href="#" class="instagram"><img th:src="@{/img/instalogo.png}"></a>
+        <a href="#" class="linkedin"><img th:src="@{/img/linkedinlogo.png}"></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><img th:src="@{/img/arrow.png}"></a>
+
+  <!-- Vendor JS Files -->
+  <script type="text/javascript" th:src="@{/js/aos.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/validate.js}"></script>
+  <script type="text/javascript" th:src="@{/js/purecounter.js}"></script>
+  <script type="text/javascript" th:src="@{/js/swiper-bundle.min.js}"></script>
+
+  <!-- Template JS File -->
+  <script type="text/javascript" th:src="@{/js/script_user.js}"></script>
+
+</body>
+
+</html>

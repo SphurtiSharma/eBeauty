@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>e-Beauty Online Consulting</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/elogo.PNG" />
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Vendor CSS Files -->
+         <link th:href="@{/vendor/animate.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/aos.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap-icons.css}" rel="stylesheet">
+        <link th:href="@{/vendor/boxicons.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/remixicon.css}" rel="stylesheet">
+        <link th:href="@{/vendor/swiper-bundle.min.css}" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link th:href="@{/css/user_main.css}" rel="stylesheet">
+        <link th:href="@{/css/calendar.css}" rel="stylesheet">
+    </head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a>e-Beauty</a></h1>
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+           <li><a th:href="@{/user_profiles}">My Profile</a></li>
+          <li><a th:href="@{/main}">My eBeauty</a></li>
+          <li><a th:href="@{/user_consultings}">My Consultings</a></li>
+          <li><a th:href="@{/user_tutorials}">Tutorials</a></li>
+          <li><a th:href="@{/user_ar}">Makeup Try On</a></li>
+          <li></li>
+          <li><a><form th:action="@{/logout}" method="post"> 
+        	<input type="submit" value="Log Out" /> 
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+     </div>
+  </header><!-- End Header -->
+
+  <main id="main" data-aos="fade-in">
+<!-- search tool-->
+
+<div class="row">
+    <div class="sidebar">
+
+      <h3 class="sidebar-title">Search</h3>
+      <div class="sidebar-item search-form">
+        <form action="">
+          <input type="text">
+          <button type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+
+        <div class="form-group">
+        <select class="form-control item" name="category" id="category">
+           <option value="dress">Choose a category</option>
+           <option value="dress">Dressing Advisory</option>
+           <option value="hair">Hair Style</option>
+           <option value="makeup">Makeup</option>
+           <option value="skin">Skin Care</option>
+       </select>
+       </div>
+    </div>
+</div><!-- End search tool-->
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <h2>Consulting Details</h2>
+    </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Trainer Section ======= -->
+    
+    <div class="mainsec row details-main"> 
+        <div class="sec1">
+            <section id="trainers" class="trainers">
+                <div class="member">
+                    <img th:src="@{/img/trainer-1.jpg}" class="img-fluid" alt=""/>
+                    <div class="member-content">
+                      <h4>Mary Kim</h4>
+                      <span>Makeup Artist</span>
+                      <p>Over 15 years of experience focused on Wedding Makeup. Worked for 10 years in Milan and now established in Vancouver/BC.</p>
+                      <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                      </div> 
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="sec2">
+            <div class="container details-trainer-user" data-aos="fade-up">
+            
+            <h3>Wedding Makeup</h3>
+            
+            <p>If you're planning to get gorgeous on your wedding day but intend to do it on your own or with the help
+            of family or friends, this consulting is definitely for you.</p>
+            <p>I can give you tips of best tons for your skin color, the best matches for your outfit and we can practice together.
+            You will look gorgeous on your special day!</p>
+            <p>&nbsp</p>
+            <h4>How to get this consulting</h4>
+            <p>Just select the most suitable date for you in the calendar below. 
+                Wait for the expert to approve the proposed schedule and that's it!  </p>  
+       
+        
+<div class="calendar-user">
+    <section class="ftco-section">
+        <div class="container">
+            
+                <div class="col-md-12">
+                    <div class="content w-100">
+                    <div class="calendar-container">
+                      <div class="calendar"> 
+                        <div class="year-header"> 
+                          <span class="left-button fa fa-chevron-left" id="prev"> </span> 
+                          <span class="year" id="label"></span> 
+                          <span class="right-button fa fa-chevron-right" id="next"> </span>
+                        </div> 
+                        <table class="months-table w-100"> 
+                          <tbody>
+                            <tr class="months-row">
+                              <td class="month">Jan</td> 
+                              <td class="month">Feb</td> 
+                              <td class="month">Mar</td> 
+                              <td class="month">Apr</td> 
+                              <td class="month">May</td> 
+                              <td class="month">Jun</td> 
+                              <td class="month">Jul</td>
+                              <td class="month">Aug</td> 
+                              <td class="month">Sep</td> 
+                              <td class="month">Oct</td>          
+                              <td class="month">Nov</td>
+                              <td class="month">Dec</td>
+                            </tr>
+                          </tbody>
+                        </table> 
+                        
+                        <table class="days-table w-100"> 
+                          <td class="day">Sun</td> 
+                          <td class="day">Mon</td> 
+                          <td class="day">Tue</td> 
+                          <td class="day">Wed</td> 
+                          <td class="day">Thu</td> 
+                          <td class="day">Fri</td> 
+                          <td class="day">Sat</td>
+                        </table> 
+                        <div class="frame"> 
+                          <table class="dates-table w-100"> 
+                          <tbody class="tbody">             
+                          </tbody> 
+                          </table>
+                        </div> 
+                        <button class="button" id="add-button">Schedule</button>
+                      </div>
+                    </div>
+                    <div class="events-container">
+                    </div>
+                    <div class="dialog" id="dialog">
+                        <h2 class="dialog-header"> Schedule Details </h2>
+                        <form class="form" id="form">
+                          <div class="form-container" align="center">
+                            <label class="form-label" id="valueFromMyButton" for="text">Your expectations for this consulting</label>
+                            <input class="input" type="text" id="name" maxlength="100">
+                            <label class="form-label" id="valueFromMyButton" for="time">Choose hour</label>
+                            <input class="input" type="time" min="8:00" max="22:00" >
+                            <input type="button" value="Cancel" class="button" id="cancel-button">
+                            <input type="button" value="OK" class="button button-white" id="ok-button">
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+                </div>
+            </div>
+       
+    </section>
+
+
+   
+        
+     
+
+        
+
+</div><!-- End session-->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+        <div class="footer1">
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><img th:src="@{/img/chevronright.png}"> <a th:href="@{/contact_up}">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}" target="_blank">Terms of service</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Receive tutorials and updates weekly!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>eBeauty</span></strong>. All Rights Reserved
+        </div>
+       
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="facebook"><img th:src="@{/img/facebook.png}"></a>
+        <a href="#" class="instagram"><img th:src="@{/img/instalogo.png}"></a>
+        <a href="#" class="linkedin"><img th:src="@{/img/linkedinlogo.png}"></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><img th:src="@{/img/arrow.png}"></a>
+
+  <!-- Vendor JS Files -->
+<script type="text/javascript" th:src="@{/js/aos.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/validate.js}"></script>
+  <script type="text/javascript" th:src="@{/js/purecounter.js}"></script>
+  <script type="text/javascript" th:src="@{/js/swiper-bundle.min.js}"></script>
+
+
+  <!-- Template JS File -->
+  <script th:src="@{/js/script_user.js}"></script>
+  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/js/popper.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/main.js}"></script>
+
+</body>
+
+</html>

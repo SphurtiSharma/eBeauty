@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>e-Beauty - Choose a Plan</title>
+        <link rel="icon" type="image/x-icon" th:href="@{/img/elogo.PNG}" />
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link th:href="@{/vendor/animate.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/aos.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/bootstrap-icons.css}" rel="stylesheet">
+        <link th:href="@{/vendor/boxicons.min.css}" rel="stylesheet">
+        <link th:href="@{/vendor/remixicon.css}" rel="stylesheet">
+        <link th:href="@{/vendor/swiper-bundle.min.css}" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link th:href="@{/css/expert_main.css}" rel="stylesheet">
+    </head>
+
+<body>
+
+
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a th:href="@{/e-beauty.ca}">e-Beauty</a></h1>
+    
+    </div>
+</header><!-- End Header -->
+
+<main id="main" data-aos="fade-in">
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in" style="background-color: #8A2BE2;">
+      <div class="container">
+        <h2>Choose your plan</h2>
+        <h4>Be a premium expert to promote yourself, your talent and earn more! </h4>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing" >
+      <div class="container d-flex justify-content-center " data-aos="fade-up" style="vertical-align:middle;">
+
+        <div class="row"  >
+
+          <div class="col-lg-3 col-md-6" style="width:300px">
+            <div class="box" >
+              <h3>Free</h3>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li>Offer virtual consultations</li>
+               <li class="na">Upload tutorials</li>
+                <li class="na">Stay-on-top search position</li>
+                <li class="na">Promote in-person services</li>
+              </ul>
+              <div class="btn-wrap">
+                <a th:href="@{/expert_profile_free}" class="btn-buy">Select</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" style="width:300px">
+            <div class="box featured" >
+              <h3>Premium</h3>
+              <h4><sup>$</sup>6.99<span> / month</span></h4>
+              <ul>
+                <li>Offer virtual consultations</li>
+               <li >Upload tutorials</li>
+                <li >Stay-on-top search position</li>
+                <li >Promote in-person services</li>
+              </ul>
+              <div class="btn-wrap">
+              <a th:href="@{/payplan_exp}"  class="btn-buy">Select</a>
+                
+              </div>
+            </div>
+          </div>
+
+        
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+        <div class="footer1">
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}"target="_blank">Terms of service</a></li>
+              </ul>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Receive tutorials and updates weekly!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>eBeauty</span></strong>. All Rights Reserved
+        </div>
+       
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="facebook"><img th:src="@{/img/facebook.png}"></a>
+        <a href="#" class="instagram"><img th:src="@{/img/instalogo.png}"></a>
+        <a href="#" class="linkedin"><img th:src="@{/img/linkedinlogo.png}"></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><img th:src="@{/img/arrow.png}"></a>
+
+  <!-- Vendor JS Files -->
+   <script type="text/javascript" th:src="@{/js/aos.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/validate.js}"></script>
+  <script type="text/javascript" th:src="@{/js/purecounter.js}"></script>
+  <script type="text/javascript" th:src="@{/js/swiper-bundle.min.js}"></script>
+
+  <!-- Template JS File -->
+  <script type="text/javascript" th:src="@{/js/script_user.js}"></script>
+</body>
+
+</html>
