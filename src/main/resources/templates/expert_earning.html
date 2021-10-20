@@ -9,8 +9,8 @@
         <title>e-Beauty Expert</title>
         <link rel="icon" type="image/x-icon" th:href="@{/img/elogo.PNG}"  />
         <!-- Favicons -->
-        <link href="assets/img/favicon.png" rel="icon">
-        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <link th:href="@{assets/img/favicon.png}" rel="icon">
+        <link th:href="@{assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -102,9 +102,9 @@
       
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-            <li><a th:href="@{/expertprofiles}">My Profile</a></li>
+            <li><a th:href="@{/expert_profile}">My Profile</a></li>
             <li><a  class="active" th:href="@{/expert_consultings}">My consultings</a></li>
-            <li><a th:href="@{/expertmain}">My Tutorials</a></li>
+            <li><a th:href="@{/expert_main}">My Tutorials</a></li>
              <li><a><form th:action="@{/logout}" method="post"> 
         	<input type="submit" value="Log Out" /> 
 		</form></a></li> 
@@ -133,7 +133,7 @@
         <h4>Upcoming Consultings</h4>
         <hr>
         
-        <ul>
+                <ul>
           <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}"> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
             <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Mary Kym&nbsp;&nbsp;
             <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;05-Aug-2021 9:00am&nbsp;&nbsp;
@@ -149,10 +149,10 @@
 
           <hr>
           <ul>
-            <li class="d-flex align-items-center"><i class="bi bi-calendar-week"> </i> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
-              <i class="bi bi-file-earmark-person"></i>&nbsp;&nbsp;Mara Silva&nbsp;&nbsp;
-              <i class="bi bi-clock"></i>&nbsp;&nbsp;06-Aug-2021 9:00am&nbsp;&nbsp;
-              <i class="bi bi-bookmark-check"></i>&nbsp;&nbsp;<strong>Confirmed</strong>
+            <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}">&nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
+              <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Mara Silva&nbsp;&nbsp;
+              <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;06-Aug-2021 9:00am&nbsp;&nbsp;
+               <img th:src="@{/img/bookmark-check.svg}">&nbsp;&nbsp;<strong>Confirmed</strong>
             </li>
           </ul>
           <div class="row">
@@ -169,10 +169,10 @@
         <hr>
         
         <ul>
-          <li class="d-flex align-items-center"><i class="bi bi-calendar-week"> </i> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
-            <i class="bi bi-file-earmark-person"></i>&nbsp;&nbsp;Lana Rios&nbsp;&nbsp;
-            <i class="bi bi-clock"></i>&nbsp;&nbsp;06-Aug-2021 10:00 am&nbsp;&nbsp;
-            <i class="bi bi-bookmark-dash-fill"></i>&nbsp;&nbsp;<strong>Pending</strong>
+          <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}"> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
+            <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Lana Rios&nbsp;&nbsp;
+            <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;06-Aug-2021 10:00 am&nbsp;&nbsp;
+            <img th:src="@{/img/bookmark-check.svg}">&nbsp;&nbsp;<strong>Pending</strong>
           </li>
         </ul>
         <div class="row">
@@ -189,10 +189,10 @@
 
           <hr>
           <ul>
-            <li class="d-flex align-items-center"><i class="bi bi-calendar-week"> </i> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
-              <i class="bi bi-file-earmark-person"></i>&nbsp;&nbsp;Kelly Lee&nbsp;&nbsp;
-              <i class="bi bi-clock"></i>&nbsp;&nbsp;07-Aug-2021 18:00pm&nbsp;&nbsp;
-              <i class="bi bi-bookmark-dash-fill"></i>&nbsp;&nbsp;<strong>Pending</strong>
+            <li class="d-flex align-items-center"><img th:src="@{/img/calendar.png}"> &nbsp;&nbsp;Wedding Makeup&nbsp;&nbsp;
+              <img th:src="@{/img/file-earmark-person.svg}">&nbsp;&nbsp;Kelly Lee&nbsp;&nbsp;
+              <img th:src="@{/img/clock.svg}">&nbsp;&nbsp;07-Aug-2021 18:00pm&nbsp;&nbsp;
+              <img th:src="@{/img/bookmark-check.svg}">&nbsp;&nbsp;<strong>Pending</strong>
             </li>
           </ul>
           <div class="row">
@@ -295,8 +295,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><img th:src="@{/img/chevronright.png}">  <a href="contact.html">Contact</a></li>
-              <li><img th:src="@{/img/chevronright.png}">  <a href="terms.html">Terms of service</a></li>
+              <li><img th:src="@{/img/chevronright.png}"> <a th:href="@{/contact_ep}">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}" target="_blank">Terms of service</a></li>
               </ul>
           </div>
 

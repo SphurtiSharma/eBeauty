@@ -67,86 +67,6 @@
     </div><!-- End Breadcrumbs -->
 
 <!-- ======= AR Area ======= -->
-<div class="container-fluid col-lg-10 align-itens-center">
-    <div class="row">
-	<div class="col-lg-4 float-right" onload="YMK.applyMakeupBySku">
-		<script>
-		(function (d,k) {
-		    var s = d.createElement('script');
-		    s.type = 'text/javascript';
-		    s.async = true;
-		    s.src = 'https://plugins-media.perfectcorp.com/smb/sdk.js?apiKey=' + k;
-		    var x = d.getElementsByTagName('script')[0];
-		    x.parentNode.insertBefore(s, x);
-		})(document, 'SMB-Ojo6NDE4NDY=');
-		</script>
-		<div id="YMK-module"></div>
-		
-		<script>
-		window.ymkAsyncInit = function() {
-		    YMK.open()
-		}
-		</script>
-
-	</div>
-	<div class="col-lg-2">
-	</div>
-	<div class="col-lg-4 float-left">
-	<br>
-	<br>
-	<br>
-    	<table class="table table-borderless">
-            <tbody>
-            		<tr style="font-weight:bolder;">Matte Lipsticks</tr>
-            		<br>
-                	<tr> <img th:src="@{/img/lip1.png}" onclick="YMK.applyMakeupBySku('lip1')"></tr>
-                    <tr> <img th:src="@{/img/lip2.png}" onclick="YMK.applyMakeupBySku('lip2')"> </tr>
-                    <tr> <img th:src="@{/img/lip3.png}" onclick="YMK.applyMakeupBySku('lip3')"> </tr>
-                    <tr> <img th:src="@{/img/lip4.png}" onclick="YMK.applyMakeupBySku('lip4')"> </tr>
-                    <tr> <img th:src="@{/img/lip5.png}" onclick="YMK.applyMakeupBySku('lip5')"> </tr>
-                    <tr> <img th:src="@{/img/lip6.png}" onclick="YMK.applyMakeupBySku('lip6')"> </tr>
-                    <tr> <img th:src="@{/img/lip7.png}" onclick="YMK.applyMakeupBySku('lip7')"> </tr>
-                    <tr> <img th:src="@{/img/lip8.png}" onclick="YMK.applyMakeupBySku('lip8')"> </tr>
-                    <tr> <img th:src="@{/img/lip9.png}" onclick="YMK.applyMakeupBySku('lip9')"> </tr>
-                    <tr> <img th:src="@{/img/lip10.png}" onclick="YMK.applyMakeupBySku('lip10')"> </tr>
-              </tbody>
-              </table>
-              
-              <table>
-     	      	 <tbody>
-                	<tr style="font-weight:bolder;">Gloss Lipsticks</tr>
-            		<br>
-                	<tr scope="row"> <img th:src="@{/img/g1.png}" onclick="YMK.applyMakeupBySku('gl1')"></tr>
-                    <tr> <img th:src="@{/img/g2.png}" onclick="YMK.applyMakeupBySku('gl2')"> </tr>
-                    <tr> <img th:src="@{/img/g5.png}" onclick="YMK.applyMakeupBySku('gl3')"> </tr>
-                    <tr> <img th:src="@{/img/g4.png}" onclick="YMK.applyMakeupBySku('gl4')"> </tr>
-          	  </tbody>
-        	</table>
-        	
-        	<table>
-           	 <tbody>
-                	<tr style="font-weight:bolder;">Creamy Lipsticks</tr>
-            		<br>
-                	<tr scope="row"> <img th:src="@{/img/s5.png}" onclick="YMK.applyMakeupBySku('lc1')"></tr>
-                    <tr> <img th:src="@{/img/s1.png}" onclick="YMK.applyMakeupBySku('lc2')"> </tr>
-                    <tr> <img th:src="@{/img/s6.png}" onclick="YMK.applyMakeupBySku('lc3')"> </tr>
-                    <tr> <img th:src="@{/img/s4.png}" onclick="YMK.applyMakeupBySku('lc4')"> </tr>
-                    <tr> <img th:src="@{/img/s7.png}" onclick="YMK.applyMakeupBySku('lc5')"> </tr>
-            </tbody>
-        	</table>
-        	<br>
-        	<table>
-           	 <tbody>
-               		<tr style="font-weight:bolder;">Blushs</tr>
-            		<br>
-                	<tr scope="row"> <img th:src="@{/img/b2.png}" onclick="YMK.applyMakeupBySku('sku-003')"></tr>
-                    <tr> <img th:src="@{/img/b1.png}" onclick="YMK.applyMakeupBySku('sku-002')"> </tr>
-                    <tr> <img th:src="@{/img/b3.png}" onclick="YMK.applyMakeupBySku('sku-001')"> </tr>
-
-            </tbody>
-        	</table>
-    </div>
-</div>
 
 
 <!-- AR Area -->
@@ -166,8 +86,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><img th:src="@{/img/chevronright.png}"> <a href="contact.html">Contact</a></li>
-              <li><img th:src="@{/img/chevronright.png}"> <a href="terms.html">Terms of service</a></li>
+              <li><img th:src="@{/img/chevronright.png}"> <a th:href="@{/contact_up}">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}" target="_blank">Terms of service</a></li>
               </ul>
           </div>
 

@@ -297,9 +297,9 @@
       
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-            <li><a th:href="@{/expertprofiles}">My Profile</a></li>
+            <li><a th:href="@{/expert_profile}">My Profile</a></li>
             <li><a  th:href="@{/expert_consultings}">My consultings</a></li>
-            <li><a class="active" th:href="@{/expertmain}">My Tutorials</a></li>
+            <li><a class="active" th:href="@{/expert_main}">My Tutorials</a></li>
              <li><a><form th:action="@{/logout}" method="post"> 
         	<input type="submit" value="Log Out" /> 
 		</form></a></li> 
@@ -448,8 +448,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><img th:src="@{/img/chevronright.png}"> <a href="contact.html">Contact</a></li>
-              <li><img th:src="@{/img/chevronright.png}">  <a href="terms.html">Terms of service</a></li>
+              <li><img th:src="@{/img/chevronright.png}"> <a th:href="@{/contact_ep}">Contact</a></li>
+              <li><img th:src="@{/img/chevronright.png}"><a th:href="@{/terms}" target="_blank">Terms of service</a></li>
               </ul>
           </div>
 
