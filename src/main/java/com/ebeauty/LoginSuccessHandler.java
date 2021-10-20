@@ -24,9 +24,10 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 		String redirectURL = request.getContextPath();
 		
 		if(userDetails.hasRole("CLIENT")){
-			redirectURL	+= "/main";
+		//	redirectURL	+= "/main";
+			redirectURL	+= "/client_chooseplan";
 		}else if (userDetails.hasRole("EXPERT")) {
-			redirectURL += "/expertmain";
+			redirectURL += "/expert_chooseplan";
 		}else if (userDetails.hasRole("ADMIN")) {
 			redirectURL += "/ebeauty-admin.ca";
 		}
